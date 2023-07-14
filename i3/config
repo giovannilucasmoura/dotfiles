@@ -217,6 +217,13 @@ bindsym Shift+Print exec flameshot full -c
 gaps inner 7
 gaps outer 0
 
+# assign programs to specific workspaces
+assign [class="Firefox|Chromium"] $ws1
+assign [class="Eclipse|Steam"] $ws2
+assign [class="sqlyog.exe|Simplenote|discord"] $ws3
+assign [class="Spotify|easyeffects"] $ws5
+
+# run at startup
 exec --no-startup-id flameshot
 exec --no-startup-id dunst
 exec --no-startup-id redshift-gtk
