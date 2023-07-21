@@ -58,7 +58,7 @@ return {
                         settings = {
                             java = {},
                         },
-                        root_dir = jdtls.setup.find_root({ ".git", "mvnw", "gradlew", "build.gradle" }),
+                        root_dir = jdtls.setup.find_root({ ".git", "mvnw", "gradlew", "build.gradle", "pom.xml" }),
                     })
                 end,
             })
