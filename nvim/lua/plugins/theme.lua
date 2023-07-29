@@ -1,10 +1,11 @@
 return {
-    { "projekt0n/github-nvim-theme" },
+    { "rktjmp/lush.nvim" },
+    { "metalelf0/jellybeans-nvim" },
 
     {
         "LazyVim/LazyVim",
         opts = {
-            colorscheme = "github_dark_high_contrast",
+            colorscheme = "jellybeans-nvim",
         },
     },
 }
