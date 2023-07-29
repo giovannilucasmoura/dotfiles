@@ -1,12 +1,20 @@
 -- Original config source: https://github.com/igorgue/dotnvim/blob/0f2cbef476b15c414f476c4c09e4951ef8b69770/lua/plugins/extras/lang/java.lua
 return {
     {
+        "nvim-treesitter/nvim-treesitter",
+        opts = function(_, opts)
+            vim.list_extend(opts.ensure_installed, {
+                "java",
+            })
+        end,
+    },
+    {
         "neovim/nvim-lspconfig",
         ft = { "java" },
         opts = {
             setup = {
-        -- stylua: ignore
-        jdtls = function() return true end,
+                -- stylua: ignore
+                jdtls = function() return true end,
             },
         },
     },
@@ -23,10 +31,10 @@ return {
                     local wk = require("which-key")
                     local bufnr = vim.api.nvim_get_current_buf()
                     local extract_variable = function()
-                        jdtls.extract_variable(true)
+                        jdtls.extract_variable({ true })
                     end
                     local extract_method = function()
-                        jdtls.extract_method(true)
+                        jdtls.extract_method({ true })
                     end
 
                     wk.register({
