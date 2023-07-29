@@ -1,0 +1,7 @@
+[[language]]
+name = "java"
+language-server = { command = "/home/giovanni/.software/jdtls/bin/jdtls", args = ["-data", "/home/giovanni/.cache/jdtls/"] }
+
+[[language]]
+name = "c-sharp"
+language-server = { command = "/home/giovanni/.software/OmniSharp/OmniSharp", args = ["-lsp"]}
