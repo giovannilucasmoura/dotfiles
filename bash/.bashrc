@@ -29,6 +29,9 @@ xterm* | rxvt* | alacritty*)
 *) ;;
 esac
 
+# lock screen command
+alias lock="xset dpms force standby"
+
 # Text editor
 alias vim=nvim
 export EDITOR=nvim
