@@ -14,17 +14,21 @@ vim.opt.rtp:prepend(lazypath)
 
 opts = {
   spec = {
-    { 'rktjmp/lush.nvim' },
-    {
-      'metalelf0/jellybeans-nvim',
-      lazy = false, -- make sure we load this during startup if it is your main colorscheme
-      priority = 1000, -- make sure to load this before all the other start plugins
-      config = function()
-        -- load the colorscheme here
-        vim.cmd([[colorscheme jellybeans-nvim]])
-      end,
-    }
-  }
+    { import = "plugin" }
+  },
+  defaults = {
+    version = "*" -- install only latest stable for plugins that support semver
+  },
+  checker = {
+    enabled = true, -- enable auto updates
+    frequency = 432000 -- only check for updates every 5 days
+  },
+  readme = {
+    enabled = true,
+    root = vim.fn.stdpath("state") .. "/lazy/readme",
+    files = { "README.md", "lua/**/README.md" },
+    skip_if_doc_exists = true,
+  },
 }
 
 require("lazy").setup(opts)
