@@ -29,6 +29,24 @@ opts = {
     files = { "README.md", "lua/**/README.md" },
     skip_if_doc_exists = true,
   },
+  performance = {
+    cache = {
+      enabled = true,
+    },
+    reset_packpath = true,
+    rtp = {
+      disabled_plugins = {
+        -- "gzip",
+        -- "matchit",
+        -- "matchparen",
+        "netrwPlugin",
+        -- "tarPlugin",
+        -- "tohtml",
+        -- "tutor",
+        -- "zipPlugin",
+      },
+    },
+  }
 }
 
 require("lazy").setup(opts)
