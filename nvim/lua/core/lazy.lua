@@ -16,10 +16,7 @@ opts = {
   spec = {
     { import = "plugin" },
     { import = "core.treesitter" },
-    { import = "core.telescope" }
-  },
-  defaults = {
-    version = "*" -- install only latest stable for plugins that support semver
+    { import = "core.telescope" }  
   },
   checker = {
     enabled = true, -- enable auto updates
