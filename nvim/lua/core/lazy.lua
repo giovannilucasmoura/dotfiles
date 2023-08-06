@@ -15,7 +15,8 @@ vim.opt.rtp:prepend(lazypath)
 opts = {
   spec = {
     { import = "plugin" },
-    { import = "core.treesitter" }
+    { import = "core.treesitter" },
+    { import = "core.telescope" }
   },
   defaults = {
     version = "*" -- install only latest stable for plugins that support semver
