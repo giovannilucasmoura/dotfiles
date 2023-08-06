@@ -16,7 +16,8 @@ opts = {
   spec = {
     { import = "plugin" },
     { import = "core.treesitter" },
-    { import = "core.telescope" }  
+    { import = "core.telescope" },
+    { import = "core.lsp" }
   },
   checker = {
     enabled = true, -- enable auto updates
