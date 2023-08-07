@@ -1,9 +1,11 @@
 {
+  "indent-o-matic": { "branch": "master", "commit": "4d11e98f523d3c4500b1dc33f0d1a248a4f69719" },
   "jellybeans-nvim": { "branch": "main", "commit": "f77b75443adf6461ded30de0243f49771f933d06" },
   "lazy.nvim": { "branch": "main", "commit": "dac844ed617dda4f9ec85eb88e9629ad2add5e05" },
   "lush.nvim": { "branch": "main", "commit": "a8f0f7b9f837887f13a61d67b40ae26188fe4d62" },
   "mason-lspconfig.nvim": { "branch": "main", "commit": "e86a4c84ff35240639643ffed56ee1c4d55f538e" },
   "mason.nvim": { "branch": "main", "commit": "fe9e34a9ab4d64321cdc3ecab4ea1809239bb73f" },
+  "neodev.nvim": { "branch": "main", "commit": "9f0205a08757711f57589a1dffa8abf525f4a23b" },
   "nvim-lspconfig": { "branch": "master", "commit": "c0de180ddb3df36feef8ac3607670894d0e7497f" },
   "nvim-tree.lua": { "branch": "master", "commit": "904f95cd9db31d1800998fa428e78e418a50181d" },
   "nvim-treesitter": { "branch": "master", "commit": "8d5e5dc40a4c480483690777cefb8cf67e710702" },

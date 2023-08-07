@@ -53,6 +53,12 @@ return {
       -- { '<space>f', function() vim.lsp.buf.format { async = true } end, desc = "Format code" }
     },
     config = function()
+      local spec_plugins = require("lazy.core.config").spec.plugins;
+
+      if spec_plugins["neodev"] ~= nil then
+        spec_plugins["neodev"].config()
+      end
+
       require('mason').setup()
       require('mason-lspconfig').setup()
 
