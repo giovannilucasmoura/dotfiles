@@ -4,7 +4,7 @@ return {
     event = { 'BufReadPre', 'BufNewFile' },
     dependencies = {
       "mason.nvim",
-      "williamboman/mason-lspconfig.nvim"
+      "mason-lspconfig.nvim"
     },
     opts = {
       diagnostics = {
@@ -56,15 +56,12 @@ return {
       local spec_plugins = require("lazy.core.config").spec.plugins;
 
       if spec_plugins["neodev.nvim"] ~= nil then
-        spec_plugins["neodev.nvim"].config()
+        spec_plugins["neodev.nvim"].config(_, _)
       end
-
-      require('mason').setup()
-      require('mason-lspconfig').setup()
 
       local lspconfig = require('lspconfig')
 
-      lspconfig.lua_ls.setup({
+      lspconfig.lua_ls.setup {
         settings = {
           Lua = {
             completion = {
@@ -72,11 +69,24 @@ return {
             }
           }
         }
-      })
+      }
+      lspconfig.omnisharp.setup {
+        cmd = { "OmniSharp", "--languageserver" }
+      }
     end
   },
   {
     'williamboman/mason.nvim',
     keys = {{ "<leader>im", function() vim.cmd("Mason") end, desc = "Mason" }}
+  },
+  {
+    'williamboman/mason-lspconfig.nvim',
+    opts = {
+      ensure_installed = { "lua_ls" }
+    },
+    config = function(_, opts)
+      require('mason').setup()
+      require('mason-lspconfig').setup(opts)
+    end
   }
 }
