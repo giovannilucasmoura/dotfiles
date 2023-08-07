@@ -6,6 +6,7 @@ return {
     dependencies = {
       'hrsh7th/cmp-nvim-lsp',
       'hrsh7th/cmp-buffer',
+      'hrsh7th/cmp-path',
       'saadparwaiz1/cmp_luasnip'
     },
     opts = function()
@@ -37,6 +38,7 @@ return {
           { name = "nvim_lsp" },
           { name = "luasnip" },
           { name = "buffer" },
+          { name = "path" }
         }),
         sorting = defaults.sorting,
       }
