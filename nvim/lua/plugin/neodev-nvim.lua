@@ -3,7 +3,7 @@ return {
       'folke/neodev.nvim',
       opts = {},
       config = function()
-        require("neodev").setup({})
+        require("neodev").setup()
       end
     }
 }

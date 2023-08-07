@@ -14,7 +14,7 @@ return {
           spacing = 4,
           source = "if_many",
           prefix = "●",
-	  -- enable this once nvim 0.10 stable gets released
+	        -- enable this once nvim 0.10 stable gets released
           -- prefix = "icons",
         },
         severity_sort = true
@@ -55,27 +55,28 @@ return {
     config = function()
       local spec_plugins = require("lazy.core.config").spec.plugins;
 
-      if spec_plugins["neodev"] ~= nil then
-        spec_plugins["neodev"].config()
+      if spec_plugins["neodev.nvim"] ~= nil then
+        spec_plugins["neodev.nvim"].config()
       end
 
       require('mason').setup()
       require('mason-lspconfig').setup()
 
       local lspconfig = require('lspconfig')
-      lspconfig.lua_ls.setup {
+
+      lspconfig.lua_ls.setup({
         settings = {
           Lua = {
-            diagnostics = {
-              globals = { 'vim' }
+            completion = {
+              callSnippet = "Replace"
             }
           }
         }
-      }
+      })
     end
   },
   {
     'williamboman/mason.nvim',
-    keys = { { "<leader>im", desc = "Mason" } }
+    keys = {{ "<leader>im", function() vim.cmd("Mason") end, desc = "Mason" }}
   }
 }

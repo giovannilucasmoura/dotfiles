@@ -12,7 +12,7 @@ end
 
 vim.opt.rtp:prepend(lazypath)
 
-opts = {
+local opts = {
   spec = {
     { import = "plugin" },
     { import = "core.treesitter" },
@@ -50,3 +50,4 @@ opts = {
 }
 
 require("lazy").setup(opts)
+vim.keymap.set('n', '<leader>il', function() vim.cmd("Lazy") end)
