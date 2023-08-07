@@ -17,7 +17,8 @@ local opts = {
     { import = "plugin" },
     { import = "core.treesitter" },
     { import = "core.telescope" },
-    { import = "core.lsp" }
+    { import = "core.lsp" },
+    { import = "core.cmp" }
   },
   checker = {
     enabled = true, -- enable auto updates
