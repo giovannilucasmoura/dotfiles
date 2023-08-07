@@ -1,7 +1,6 @@
 return {
   {
     'nvim-treesitter/nvim-treesitter',
-    version = false, -- use latest version
     event = { "BufReadPost", "BufNewFile" }, -- lazy load on reading buffer or creating file
     keys = {
       { "<c-space>", desc = "Increment selection" },
@@ -21,7 +20,7 @@ return {
         },
       },
     },
-    config = function(_, opts) 
+    config = function(_, opts)
       require("nvim-treesitter.configs").setup(opts)
     end
   }
