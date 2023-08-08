@@ -55,6 +55,11 @@ return {
             return buffer.devicon.color
           end,
         },
+        -- {
+        --  text = function(buffer)
+        --    return buffer.index .. ': '
+        --  end,
+        -- },
         {
           text = function(buffer)
             return buffer.filename .. ' '
@@ -69,4 +74,16 @@ return {
       },
     }
   end,
+  config = function(_, opts)
+    local map = vim.api.nvim_set_keymap
+
+    map('n', '<Leader>p', '<Plug>(cokeline-focus-prev)', { silent = true })
+    map('n', '<Leader>n', '<Plug>(cokeline-focus-next)', { silent = true })
+
+    for i = 1,9 do
+      map('n', ('<leader>%s'):format(i),      ('<Plug>(cokeline-focus-%s)'):format(i),  { silent = true })
+    end
+
+    require('cokeline').setup(opts)
+  end
 }

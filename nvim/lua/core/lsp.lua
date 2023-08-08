@@ -30,20 +30,15 @@ return {
       format_notify = true
     },
     keys = {
-      { "K", vim.lsp.buf.hover, desc = "Hover" },
-      { "gK", vim.lsp.buf.signature_help, desc = "Signature Help" },
+      { "<leader>k", vim.lsp.buf.hover, desc = "Hover" },
+      { "<leader>K", vim.lsp.buf.signature_help, desc = "Signature Help" },
       { "<c-k>", vim.lsp.buf.signature_help, mode = "i", desc = "Signature Help" },
       { "<leader>a", vim.lsp.buf.code_action, desc = "Code Action", mode = { "n", "v" } },
-      { 'gD', vim.lsp.buf.declaration, desc = "Go to declaration" },
-      { 'gd', vim.lsp.buf.definition, desc = "Go to definition" },
-      { 'gi', vim.lsp.buf.implementation, desc = "Go to implementation"},
       -- TODO: Figure out what workspaces do for the LSP
       -- { '<space>wa', vim.lsp.buf.add_workspace_folder, desc = "" },
       -- { '<space>wr', vim.lsp.buf.remove_workspace_folder, desc = "" },
       -- { '<space>wl', function() print(vim.inspect(vim.lsp.buf.list_workspace_folders())) end},
-      { '<leader>D', vim.lsp.buf.type_definition, desc = "Type definition" },
       { '<leader>cr', vim.lsp.buf.rename, desc = "Rename" },
-      { 'gr', vim.lsp.buf.references, desc = "List references" },
       {
         '<leader>mF',
         function()
