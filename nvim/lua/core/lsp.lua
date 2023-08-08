@@ -24,15 +24,10 @@ return {
         enabled = false
       },
       capabilities = {},
-      -- format on save
+      -- Format on save
       autoformat = false,
       -- useful for debugging formatter issues
-      format_notify = false,
-      -- formatting not handled by lsp(for now?)
-      format = {
-        formatting_options = nil,
-        timeout_ms = nil,
-      },
+      format_notify = true
     },
     keys = {
       { "K", vim.lsp.buf.hover, desc = "Hover" },
@@ -49,8 +44,18 @@ return {
       { '<leader>D', vim.lsp.buf.type_definition, desc = "Type definition" },
       { '<leader>cr', vim.lsp.buf.rename, desc = "Rename" },
       { 'gr', vim.lsp.buf.references, desc = "List references" },
-      -- Not using the LSP for formatting(for now??)
-      -- { '<space>f', function() vim.lsp.buf.format { async = true } end, desc = "Format code" }
+      {
+        '<leader>mF',
+        function()
+          vim.lsp.buf.format {
+            range = {
+              ["start"] = vim.api.nvim_buf_get_mark(0, "<"),
+              ["end"] = vim.api.nvim_buf_get_mark(0, ">"),
+            }
+          }
+        end,
+        desc = "Format (LSP)"
+      }
     },
     config = function()
       local spec_plugins = require("lazy.core.config").spec.plugins;

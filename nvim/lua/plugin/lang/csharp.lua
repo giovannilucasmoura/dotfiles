@@ -6,12 +6,6 @@ return {
     end
   },
   {
-    'williamboman/mason-lspconfig.nvim',
-    opts = function(_, opts)
-      vim.list_extend(opts.ensure_installed, { "omnisharp" })
-    end
-  },
-  {
     "neovim/nvim-lspconfig",
     opts = {
       servers = {
@@ -21,7 +15,6 @@ return {
         omnisharp = function(_, _)
           vim.api.nvim_create_autocmd("LspAttach", {
             callback = function(args)
-              -- local buffer = args.buf
               local client = vim.lsp.get_client_by_id(args.data.client_id)
 
               if client.name == "omnisharp" then
