@@ -76,7 +76,8 @@ return {
         }
       }
       lspconfig.omnisharp.setup {
-        cmd = { 'OmniSharp', '--languageserver' }
+        cmd = { vim.fn.stdpath('data') .. '/mason/bin/omnisharp', '--languageserver' },
+        root_dir = require("lspconfig").util.root_pattern('*.sln', '*.csproj', '.git'),
       }
       lspconfig.bashls.setup {
         cmd = { vim.fn.stdpath('data') .. '/mason/bin/bash-language-server', 'start' }
