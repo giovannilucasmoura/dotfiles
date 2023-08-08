@@ -76,7 +76,10 @@ return {
         }
       }
       lspconfig.omnisharp.setup {
-        cmd = { "OmniSharp", "--languageserver" }
+        cmd = { 'OmniSharp', '--languageserver' }
+      }
+      lspconfig.bashls.setup {
+        cmd = { vim.fn.stdpath('data') .. '/mason/bin/bash-language-server', 'start' }
       }
     end
   },
