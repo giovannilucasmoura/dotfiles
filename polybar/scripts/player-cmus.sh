@@ -12,10 +12,16 @@ if info=$(cmus-remote -Q 2> /dev/null); then
 			info_string="$artist: $title - $album"
 
 			if [ "$status" = "playing" ]; then
-				echo "▶ $info_string"
+				info_string="▶ $info_string"
 			else
-				echo "$info_string"
+				info_string="$info_string"
 			fi
+			
+			if [ ${#info_string} > 50 ]; then
+				info_string="${info_string:0:50}..."
+			fi
+
+			echo "$info_string"
 		else
 			echo ""
 		fi
