@@ -13,6 +13,7 @@ o.tabstop = 4 -- how many characters a tab occupies
 o.softtabstop = 4 -- same thing but for soft tabs
 o.shiftwidth = 4 -- how much to indent when using << and >>
 o.expandtab = true -- transform tab insertion into multiple spaces
+o.autoindent = true
 
 vim.g.mapleader = " " -- set leader key as <space>
 
