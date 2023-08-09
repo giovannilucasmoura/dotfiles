@@ -10,12 +10,21 @@ return {
     local blue = '#8094B4'
     local black = '#000000'
     local white = '#FFFFFF'
+    local red = '#FF0000'
+    local yellow = '#FFA500'
 
     return {
       show_if_buffers_are_at_least = 2,
       default_hl = {
         fg = function(buffer)
-          return buffer.is_focused and get_hex('Normal', 'fg') or get_hex('Comment', 'fg')
+            local d = buffer.diagnostics
+
+            if not buffer.is_focused then return get_hex('Comment', 'fg') end
+
+            if d.errors > 0 then return red
+            elseif d.warnings > 0 or d.infos > 0 then return yellow end
+
+            return buffer.is_focused and get_hex('Normal', 'fg') or get_hex('Comment', 'fg')
         end,
         bg = 'NONE',
       },
@@ -49,17 +58,12 @@ return {
         },
         {
           text = function(buffer)
-            return ' ' .. buffer.devicon.icon
+            return ' ' .. buffer.devicon.icon .. ' '
           end,
           fg = function(buffer)
             return buffer.devicon.color
           end,
         },
-        -- {
-        --  text = function(buffer)
-        --    return buffer.index .. ': '
-        --  end,
-        -- },
         {
           text = function(buffer)
             return buffer.filename .. ' '
@@ -67,6 +71,25 @@ return {
           style = function(buffer)
             return buffer.is_focused and 'bold' or nil
           end,
+        },
+        {
+          text = function(buffer)
+            local d = buffer.diagnostics
+
+            if d.errors > 0 then return ' '
+            elseif d.warnings > 0 then return ' '
+            elseif d.infos > 0 or d.hints > 0 then return ' '
+            else return '' end
+          end,
+          fg = function(buffer)
+            local d = buffer.diagnostics
+
+            if not buffer.is_focused then return get_hex('Comment', 'fg') end
+
+            if d.errors > 0 then return red
+            elseif d.warnings > 0 or d.infos > 0 then return yellow
+            else return white end
+          end
         },
         {
           text = ' ',
@@ -80,10 +103,10 @@ return {
     map('n', '<Leader>p', '<Plug>(cokeline-focus-prev)', { silent = true })
     map('n', '<Leader>n', '<Plug>(cokeline-focus-next)', { silent = true })
 
-    for i = 1,9 do
-      map('n', ('<leader>%s'):format(i),      ('<Plug>(cokeline-focus-%s)'):format(i),  { silent = true })
+    for i = 1, 9 do
+      map('n', ('<leader>%s'):format(i), ('<Plug>(cokeline-focus-%s)'):format(i), { silent = true })
     end
 
     require('cokeline').setup(opts)
-  end
+  end,
 }
