@@ -65,6 +65,13 @@ return {
           end,
         },
         {
+          text = function(buffer) return buffer.unique_prefix end,
+          fg = function(buffer)
+            return buffer.is_focused and get_hex('Normal', 'fg') or get_hex('Comment', 'fg')
+          end,
+          italic = true
+        },
+        {
           text = function(buffer)
             return buffer.filename .. ' '
           end,
