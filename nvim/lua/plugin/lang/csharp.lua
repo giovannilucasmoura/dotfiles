@@ -6,6 +6,12 @@ return {
     end
   },
   {
+    'williamboman/mason-lspconfig.nvim',
+    opts = {
+      ensure_installed = { "omnisharp" }
+    },
+  },
+  {
     "neovim/nvim-lspconfig",
     opts = {
       servers = {
