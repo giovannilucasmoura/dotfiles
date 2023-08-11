@@ -1,6 +1,6 @@
 local binds = {
-  line = '<leader>mc',
-  block = '<leader>mC',
+  line = 'mc',
+  block = 'mC',
 }
 
 return {

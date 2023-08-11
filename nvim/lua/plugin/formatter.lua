@@ -18,7 +18,8 @@ return {
       }
     end,
     keys = {
-      { '<leader>mf', function() vim.cmd('Format') end, mode = { 'n', 'v' }, desc = 'Format (external)' }
+      { 'mf', function() vim.cmd('Format') end, mode = { 'n', 'v' }, desc = 'Format (external)' },
+      { 'mF', function() vim.cmd('Format') end, mode = { 'n', 'v' }, desc = 'Format (external)' }
     }
   }
 }
