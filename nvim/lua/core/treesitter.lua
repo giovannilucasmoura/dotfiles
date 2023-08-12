@@ -9,7 +9,7 @@ return {
     opts = {
       highlight = { enable = true },
       indent = { enable = true },
-      ensure_installed = { "json", "lua", "yaml" },
+      ensure_installed = { "json", "yaml" },
       incremental_selection = {
         enable = true,
         keymaps = {
