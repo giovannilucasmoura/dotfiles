@@ -88,6 +88,10 @@ return {
           workspace = '/home/giovanni/.cache/jdtls/workspace',
         },
       })
+      lspconfig.ocamlls.setup({
+        cmd = { 'ocamllsp', '--stdio' },
+        root_dir = lspconfig.util.root_pattern('dune-project', '*.opam', 'esy.json', 'package.json'),
+      })
     end,
   },
   {

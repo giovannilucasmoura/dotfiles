@@ -13,6 +13,16 @@ return {
           cs = {
             require('formatter.filetypes.cs').dotnetformat,
           },
+          ocaml = function()
+            return {
+              exe = 'ocamlformat',
+              args = {
+                '--enable-outside-detected-project',
+                vim.api.nvim_buf_get_name(0),
+              },
+              stdin = true,
+            }
+          end,
           ['*'] = { require('formatter.filetypes.any').remove_trailing_whitespace },
         },
       }
