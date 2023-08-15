@@ -34,9 +34,14 @@ return {
       { '<leader>K', vim.lsp.buf.signature_help, desc = 'Signature Help' },
       { '<c-k>', vim.lsp.buf.signature_help, mode = 'i', desc = 'Signature Help' },
       { '<leader>a', vim.lsp.buf.code_action, desc = 'Code Action', mode = { 'n', 'v' } },
-      { '<space>wa', vim.lsp.buf.add_workspace_folder, desc = "" },
-      { '<space>wr', vim.lsp.buf.remove_workspace_folder, desc = "" },
-      { '<space>wl', function() print(vim.inspect(vim.lsp.buf.list_workspace_folders())) end},
+      { '<space>wa', vim.lsp.buf.add_workspace_folder, desc = '' },
+      { '<space>wr', vim.lsp.buf.remove_workspace_folder, desc = '' },
+      {
+        '<space>wl',
+        function()
+          print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
+        end,
+      },
       { '<leader>cr', vim.lsp.buf.rename, desc = 'Rename' },
       {
         '<leader>mF',

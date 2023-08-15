@@ -1,6 +1,11 @@
 return {
   'nvim-telescope/telescope.nvim',
   dependencies = { 'nvim-lua/plenary.nvim' },
+  opts = {
+    defaults = {
+      path_display = { 'truncate' }
+    }
+  },
   keys = {
     {
       '<leader>ff',
@@ -41,17 +46,17 @@ return {
 
     -- LSP Bindings
     {
-      'gd',
+      '<leader>gd',
       function() require('telescope.builtin').lsp_definitions() end,
       desc = 'Go to definition',
     },
     {
-      'gD',
+      '<leader>gD',
       function() require('telescope.builtin').lsp_type_definitions() end,
       desc = 'Go to type definition',
     },
     {
-      'gi',
+      '<leader>gi',
       function() require('telescope.builtin').lsp_implementations() end,
       desc = 'Go to implementation',
     },
