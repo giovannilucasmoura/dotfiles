@@ -81,18 +81,6 @@ return {
       lspconfig.bashls.setup({
         cmd = { vim.fn.stdpath('data') .. '/mason/bin/bash-language-server', 'start' },
       })
-      lspconfig.jdtls.setup({
-        cmd = {
-          vim.fn.stdpath('data') .. '/mason/bin/jdtls',
-          '-configuration',
-          vim.fn.stdpath('data') .. '/mason/packages/jdtls/config_linux',
-          '-data',
-          '/home/giovanni/.cache/jdtls/workspace',
-        },
-        init_options = {
-          workspace = '/home/giovanni/.cache/jdtls/workspace',
-        },
-      })
       lspconfig.ocamlls.setup({
         cmd = { 'ocamllsp', '--stdio' },
         root_dir = lspconfig.util.root_pattern('dune-project', '*.opam', 'esy.json', 'package.json'),
