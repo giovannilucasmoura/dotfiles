@@ -39,6 +39,7 @@ return {
               '-Declipse.product=org.eclipse.jdt.ls.core.product',
               '-Dlog.protocol=true',
               '-Dlog.level=ALL',
+              "-javaagent:" .. jdtls_path .. 'lombok.jar',
               '-Xmx1g',
               '--add-modules=ALL-SYSTEM',
               '--add-opens',
