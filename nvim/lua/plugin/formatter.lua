@@ -7,12 +7,10 @@ return {
         logging = true,
         log_level = vim.log.levels.INFO,
         filetype = {
-          lua = {
-            require('formatter.filetypes.lua').stylua,
-          },
-          cs = {
-            require('formatter.filetypes.cs').dotnetformat,
-          },
+          lua = { require('formatter.filetypes.lua').stylua },
+          cs = { require('formatter.filetypes.cs').dotnetformat },
+          java = { require('formatter.filetypes.java').clangformat },
+          html = { require('formatter.filetypes.html').prettierd },
           ocaml = function()
             return {
               exe = 'ocamlformat',
