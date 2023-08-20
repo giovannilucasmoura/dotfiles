@@ -31,6 +31,7 @@ local opts = {
     files = { "README.md", "lua/**/README.md" },
     skip_if_doc_exists = true,
   },
+  change_detection = { enabled = false },
   performance = {
     cache = {
       enabled = true,

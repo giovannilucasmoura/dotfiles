@@ -8,8 +8,26 @@ return {
         log_level = vim.log.levels.INFO,
         filetype = {
           lua = { require('formatter.filetypes.lua').stylua },
-          cs = { require('formatter.filetypes.cs').dotnetformat },
-          java = { require('formatter.filetypes.java').clangformat },
+          cs = function()
+            return {
+              exe = 'clang-format',
+              args = {
+                '--assume-filename=.cs',
+                '--style=Microsoft',
+              },
+              stdin = true,
+            }
+          end,
+          java = function()
+            return {
+              exe = 'clang-format',
+              args = {
+                '--assume-filename=.java',
+                '--style="{BasedOnStyle: LLVM, IndentWidth: 4}"',
+              },
+              stdin = true,
+            }
+          end,
           html = { require('formatter.filetypes.html').prettierd },
           ocaml = function()
             return {

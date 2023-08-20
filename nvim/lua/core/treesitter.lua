@@ -9,7 +9,7 @@ return {
     opts = {
       highlight = { enable = true },
       indent = { enable = true },
-      ensure_installed = { "json", "yaml" },
+      ensure_installed = { "json", "yaml", "html" },
       incremental_selection = false,
     },
     config = function(_, opts)
