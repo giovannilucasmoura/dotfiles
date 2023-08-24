@@ -8,7 +8,7 @@ return {
 
       return {
         {
-          '<leader>dsw',
+          '<leader>xw',
           function()
             local sessionname = ''
             -- theres probably a better way to do this
@@ -21,14 +21,14 @@ return {
           desc = 'Write session',
         },
         {
-          '<leader>dss',
+          '<leader>xs',
           function()
             msessions.select('read')
           end,
           desc = 'Write session',
         },
         {
-          '<leader>dsd',
+          '<leader>xd',
           function()
             msessions.select('delete')
           end,

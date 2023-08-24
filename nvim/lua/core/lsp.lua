@@ -42,17 +42,11 @@ return {
           print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
         end,
       },
-      { '<leader>cr', vim.lsp.buf.rename, desc = 'Rename' },
+      { '<leader>mr', vim.lsp.buf.rename, desc = 'Rename' },
       {
         '<leader>mF',
-        function()
-          vim.lsp.buf.format({
-            range = {
-              ['start'] = vim.api.nvim_buf_get_mark(0, '<'),
-              ['end'] = vim.api.nvim_buf_get_mark(0, '>'),
-            },
-          })
-        end,
+        function() vim.lsp.buf.format() end,
+        mode = 'v',
         desc = 'Format (LSP)',
       },
     },
