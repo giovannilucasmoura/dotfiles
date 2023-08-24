@@ -23,7 +23,7 @@ return {
               exe = 'clang-format',
               args = {
                 '--assume-filename=.java',
-                '--style="{BasedOnStyle: LLVM, IndentWidth: 4}"',
+                '--style="{BasedOnStyle: WebKit, BreakBeforeBraces: Attach, IndentWidth: 4}"',
               },
               stdin = true,
             }
