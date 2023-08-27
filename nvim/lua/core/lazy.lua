@@ -15,7 +15,6 @@ vim.opt.rtp:prepend(lazypath)
 local opts = {
   spec = {
     { import = "core.treesitter" },
-    { import = "core.telescope" },
     { import = "core.lsp" },
     { import = "core.cmp" },
     { import = "plugin" },
