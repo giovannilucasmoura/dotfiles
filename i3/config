@@ -50,10 +50,10 @@ bindsym $mod+Shift+q kill
 bindsym $mod+c exec "rofi -show combi -combi-modi \\"drun,run\\""
 
 # change focus
-bindsym $mod+j focus left
-bindsym $mod+k focus down
-bindsym $mod+l focus up
-bindsym $mod+ccedilla focus right
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left

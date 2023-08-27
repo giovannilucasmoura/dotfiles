@@ -18,12 +18,6 @@ o.clipboard = 'unnamedplus' -- use system clipboard
 
 vim.g.mapleader = ' ' -- set leader key as <space>
 
--- remapping hjkl for ABNT keyboards
-vim.keymap.set({ 'n', 'v' }, 'j', 'h', { noremap = true })
-vim.keymap.set({ 'n', 'v' }, 'k', 'j', { noremap = true })
-vim.keymap.set({ 'n', 'v' }, 'l', 'k', { noremap = true })
-vim.keymap.set({ 'n', 'v' }, 'ç', 'l', { noremap = true })
-
 -- delete buffer
 vim.keymap.set('n', '<leader>q', function()
   vim.cmd('bd')
