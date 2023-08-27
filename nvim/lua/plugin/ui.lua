@@ -150,7 +150,9 @@ return {
       timeout = 2500,
     },
     config = function()
-      require('notify').setup()
+      require('notify').setup({
+        background_colour = '#000000',
+      })
       vim.notify = require('notify')
     end,
   },
@@ -172,6 +174,9 @@ return {
       vim.cmd('colorscheme jellybeans-nvim')
     end,
     dependencies = { 'rktjmp/lush.nvim' },
+  },
+  {
+    'xiyaowong/transparent.nvim',
   },
   {
     'echasnovski/mini.starter',
