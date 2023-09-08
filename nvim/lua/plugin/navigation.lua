@@ -168,18 +168,18 @@ return {
     },
     keys = {
       {
-        '<leader>e',
+        '<leader>t',
         function()
           require('nvim-tree.api').tree.toggle({ path = vim.fn.getcwd() })
         end,
         desc = 'Toggle Nvim-Tree',
       },
       {
-        '<leader>E',
+        '<leader>T',
         function()
-          require('nvim-tree.api').tree.focus()
+          require('nvim-tree.api').tree.toggle({ path = vim.fn.getcwd(), find_file = true })
         end,
-        desc = 'Refresh Nvim-Tree',
+        desc = 'Find file on Nvim-Tree',
       },
     },
     init = function(plugin)
