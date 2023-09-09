@@ -163,4 +163,10 @@ return {
       require('mini.starter').setup()
     end,
   },
+  {
+    'aznhe21/actions-preview.nvim',
+    keys = {
+      {'<leader>ia', function() require('actions-preview').code_actions() end, desc = "Code Action Preview"}
+    },
+  },
 }
