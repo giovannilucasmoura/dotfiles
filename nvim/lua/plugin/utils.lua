@@ -22,13 +22,6 @@ return {
     end,
   },
   {
-    'echasnovski/mini.trailspace',
-    version = '*',
-    config = function()
-      require('mini.trailspace').setup()
-    end,
-  },
-  {
     'echasnovski/mini.sessions',
     lazy = false,
     priority = 100,
@@ -101,17 +94,5 @@ return {
     config = function()
       require('neodev').setup()
     end,
-  },
-  {
-    'norcalli/nvim-colorizer.lua',
-    keys = {
-      {
-        '<leader>dc',
-        function()
-          require('colorizer').attach_to_buffer(0)
-        end,
-        desc = 'Attach colorizer',
-      },
-    },
   },
 }

@@ -157,28 +157,6 @@ return {
     end,
   },
   {
-    'lukas-reineke/indent-blankline.nvim',
-    opts = {
-      char = '▏',
-      context_char = '▏',
-      max_indent_increase = 1,
-      show_current_context = true,
-      show_trailing_blankline_indent = false,
-    },
-  },
-  {
-    'metalelf0/jellybeans-nvim',
-    lazy = false,
-    priority = 1000,
-    config = function()
-      vim.cmd('colorscheme jellybeans-nvim')
-    end,
-    dependencies = { 'rktjmp/lush.nvim' },
-  },
-  {
-    'xiyaowong/transparent.nvim',
-  },
-  {
     'echasnovski/mini.starter',
     version = '*',
     config = function()
