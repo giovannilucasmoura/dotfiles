@@ -1,36 +1,21 @@
 { pkgs, fonts, ... }:
 let
   unstable = import <nixos-unstable> {};
+  unstablePkgs = with unstable; [ neovim nixd zellij ];
 in
 {
-    environment.systemPackages = [
-      unstable.neovim
-      unstable.zellij
+  environment.systemPackages = with pkgs; [
+    alacritty cmus cmusfm dunst feh firefox-esr flameshot gcc i3lock-color pamixer picom polybar
+    redshift ripgrep rofi ungoogled-chromium xf86_input_wacom xss-lock zoxide
+  ] ++ unstablePkgs;
 
-      pkgs.cmus
-      pkgs.cmusfm
-      pkgs.dunst
-      pkgs.feh
-      pkgs.flameshot
-      pkgs.gcc
-      pkgs.pamixer
-      pkgs.firefox-esr
-      pkgs.i3lock-color
-      pkgs.picom
-      pkgs.redshift
-      pkgs.ripgrep
-      pkgs.rofi
-      pkgs.ungoogled-chromium
-      pkgs.alacritty
-      pkgs.polybar
-      pkgs.xf86_input_wacom
-      pkgs.xss-lock
-      pkgs.zoxide
-  ];
+  programs = {
+    i3lock.package = pkgs.i3lock-color;
 
-  programs.steam = {
-    enable = true;
-    remotePlay.openFirewall = true;
-    dedicatedServer.openFirewall = true;
+    steam = {
+      enable = true;
+      remotePlay.openFirewall = true;
+      dedicatedServer.openFirewall = true;
+    };
   };
 }
