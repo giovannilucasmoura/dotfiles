@@ -1,7 +1,7 @@
 { pkgs, ... }:
 let
   unstable = import <nixos-unstable> {};
-  unstablePkgs = with unstable; [ neovim nixd zellij ];
+  unstablePkgs = with unstable; [ neovim zellij ];
 in
 {
   environment.systemPackages = with pkgs; [
