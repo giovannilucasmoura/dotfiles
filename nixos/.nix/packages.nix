@@ -1,12 +1,12 @@
-{ pkgs, fonts, ... }:
+{ pkgs, ... }:
 let
   unstable = import <nixos-unstable> {};
   unstablePkgs = with unstable; [ neovim nixd zellij ];
 in
 {
   environment.systemPackages = with pkgs; [
-    alacritty cmus cmusfm dunst feh firefox-esr flameshot gcc i3lock-color pamixer picom polybar
-    redshift ripgrep rofi ungoogled-chromium xf86_input_wacom xss-lock zoxide
+    alacritty cmus cmusfm dunst feh firefox-esr flameshot fzf i3lock-color neofetch ntfs3g pamixer picom polybar
+    ranger redshift ripgrep rofi starship syncthing chromium xclip xf86_input_wacom xss-lock zoxide
   ] ++ unstablePkgs;
 
   programs = {
