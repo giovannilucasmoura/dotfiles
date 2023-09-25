@@ -27,6 +27,8 @@
       '';
       extraEntriesBeforeNixOS = true;
     };
+    
+    supportedFilesystems = [ "ntfs" ];
   };
 
   networking.hostName = "blackbox";
@@ -86,6 +88,7 @@
     wget
     vim
     git
+    ntfs3g
   ];
 
   system.stateVersion = "23.05";
