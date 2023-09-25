@@ -24,4 +24,9 @@ in
     # Other packages
     pkgs.clang-tools unstable.prettierd
   ];
+
+  # Docker
+  virtualisation.docker.enable = true;
+  users.users.giovanni.extraGroups = [ "docker" ];
+
 }
