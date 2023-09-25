@@ -32,4 +32,9 @@
 
     package = config.boot.kernelPackages.nvidiaPackages.stable;
   };
+
+  fileSystems."/home/giovanni/Data" = {
+    device = "/dev/disk/by-uuid/e0b5d29f-80ea-4f6d-8503-9cce80be5115";
+    fsType = "ext4";
+  };
 }
