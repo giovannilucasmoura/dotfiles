@@ -6,14 +6,14 @@ in
   environment.systemPackages = [
     # C \ C++
     pkgs.gcc
-    # C#
-    pkgs.dotnet-sdk pkgs.dotnet-sdk_7 pkgs.omnisharp-roslyn
+    # C# / .NET
+    pkgs.dotnet-sdk
     # Java
     pkgs.jdk
     # Javascript
     pkgs.nodejs_20
     # LaTeX
-    pkgs.texlive.combined.scheme-medium pkgs.pplatex
+    pkgs.texlive.combined.scheme-full pkgs.pplatex
     # Nix
     unstable.nixd
     # OCaml
@@ -21,7 +21,7 @@ in
     # Rust
     pkgs.rustup
 
-    # Other
+    # Other packages
     pkgs.clang-tools unstable.prettierd
   ];
 }
