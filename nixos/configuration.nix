@@ -6,6 +6,7 @@
       ./hardware-configuration.nix /home/giovanni/.nix/default.nix
     ];
 
+  boot.supportedFilesystems = [ "ntfs" ];
   boot.loader = {
     efi = {
       canTouchEfiVariables = true;
@@ -27,8 +28,6 @@
       '';
       extraEntriesBeforeNixOS = true;
     };
-    
-    supportedFilesystems = [ "ntfs" ];
   };
 
   networking.hostName = "blackbox";

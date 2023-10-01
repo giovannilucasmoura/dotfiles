@@ -30,7 +30,7 @@
 
     forceFullCompositionPipeline = true;
 
-    package = config.boot.kernelPackages.nvidiaPackages.stable;
+    package = config.boot.kernelPackages.nvidiaPackages.production;
   };
 
   fileSystems."/home/giovanni/Data" = {
