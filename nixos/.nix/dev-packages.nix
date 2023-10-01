@@ -1,28 +1,25 @@
 { pkgs, ... }:
-let
-  unstable = import <nixos-unstable> {};
-in
 {
-  environment.systemPackages = [
+  environment.systemPackages = with pkgs; [
     # C \ C++
-    pkgs.gcc
+    gcc
     # C# / .NET
-    pkgs.dotnet-sdk
+    dotnet-sdk
     # Java
-    pkgs.jdk
+    jdk
     # Javascript
-    pkgs.nodejs_20
+    nodejs_20
     # LaTeX
-    pkgs.texlive.combined.scheme-full pkgs.pplatex
+    texlive.combined.scheme-full pplatex
     # Nix
-    unstable.nixd
+    nixd
     # OCaml
-    pkgs.opam
+    opam
     # Rust
-    pkgs.rustup
+    rustup
 
     # Other packages
-    pkgs.clang-tools unstable.prettierd
+    clang-tools prettierd
   ];
 
   # Docker
