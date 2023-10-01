@@ -6,8 +6,8 @@ in
 {
   environment.systemPackages = with pkgs; [
     alacritty chromium cmus cmusfm dunst feh firefox-esr flameshot fzf gimp i3lock-color krita lxappearance neofetch
-    pamixer polybar qbittorrent ranger redshift ripgrep rofi starship syncthing xclip xf86_input_wacom xss-lock zathura
-    zoxide
+    pamixer pavucontrol picom polybar qbittorrent ranger redshift ripgrep rofi starship syncthing xclip xf86_input_wacom
+    xss-lock zathura zoxide
   ] ++ unstablePkgs;
 
   programs = {
