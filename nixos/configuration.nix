@@ -83,12 +83,19 @@
 
   nixpkgs.config.allowUnfree = true;
 
-  environment.systemPackages = with pkgs; [
-    wget
-    vim
-    git
-    ntfs3g
-  ];
+  environment = {
+    systemPackages = with pkgs; [ wget vim git ntfs3g xdg-user-dirs ];
+    etc = {
+      "xdg/user-dirs.defaults".text = ''
+        DOWNLOAD=Downloads/
+        PUBLICSHARE=Public/
+        DOCUMENTS=Documents/
+        MUSIC=Music/
+        PICTURES=Pictures/
+        VIDEOS=Videos/
+      '';
+    };
+  };
 
   system.stateVersion = "23.05";
 }
