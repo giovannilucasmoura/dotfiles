@@ -22,7 +22,7 @@ in
     pkgs.rustup
 
     # Other packages
-    pkgs.clang-tools unstable.prettierd
+    pkgs.clang-tools pkgs.clang unstable.prettierd
   ];
 
   # Docker
