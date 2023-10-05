@@ -88,6 +88,7 @@ return {
         cmd = { 'ocamllsp', '--stdio' },
         root_dir = lspconfig.util.root_pattern('dune-project', '*.opam', 'esy.json', 'package.json'),
       })
+      lspconfig.nixd.setup{}
     end,
   },
   {
