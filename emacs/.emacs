@@ -8,3 +8,9 @@
 (setq display-line-numbers-type 'relative) ;; Relative line number
 (global-hl-line-mode t) ;; Highlight current line.
 (menu-bar-mode -1) ;; Disable menu bar
+
+;; Recent files
+(recentf-mode 1)
+(setq recentf-max-menu-items 25)
+(setq recentf-max-saved-items 25)
+(global-set-key "\C-x\ \C-r" 'recentf-open-files)
