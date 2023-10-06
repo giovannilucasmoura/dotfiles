@@ -20,3 +20,15 @@
 (setq recentf-max-menu-items 25)
 (setq recentf-max-saved-items 25)
 (global-set-key "\C-x\ \C-r" 'recentf-open-files)
+
+;; Evil
+(unless (package-installed-p 'evil)
+  (package-install 'evil))
+(require 'evil)
+(evil-mode 1)
+(evil-set-undo-system 'undo-redo) ;; Enable redo
+
+(custom-set-variables
+ '(package-selected-packages '(evil)))
+(custom-set-faces
+ )
