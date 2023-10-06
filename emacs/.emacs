@@ -1,3 +1,9 @@
+;; Set up package.el + MELPA
+(require 'package)
+(add-to-list 'package-archives
+             '("melpa" . "https://melpa.org/packages/"))
+(package-initialize)
+
 (add-hook 'prog-mode-hook 'display-line-numbers-mode) ;; line numbers in programming mode
 
 (load-theme 'modus-vivendi)
