@@ -17,6 +17,17 @@
   (recentf-mode t)
   :bind ("C-x C-r" . recentf-open-files))
 
+;; Evil
+(use-package evil
+  :init
+  (setq evil-insert-state-cursor 'bar
+	evil-shift-width 2
+        evil-want-C-i-jump nil
+        evil-want-C-u-scroll t)
+  :config
+  (evil-mode 1)
+  (evil-set-undo-system 'undo-redo)) ;; Enable redo
+
 
 ;; Options
 (setq inhibit-splash-screen t ;; Disable splash screen
@@ -29,12 +40,6 @@
 
 (add-hook 'prog-mode-hook 'display-line-numbers-mode) ;; line numbers in programming mode
 
-;; Evil
-(unless (package-installed-p 'evil)
-  (package-install 'evil))
-(require 'evil)
-(evil-mode 1)
-(evil-set-undo-system 'undo-redo) ;; Enable redo
 (load-theme 'modus-vivendi)
 
 (custom-set-variables
