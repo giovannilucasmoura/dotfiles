@@ -28,6 +28,9 @@
   (evil-mode 1)
   (evil-set-undo-system 'undo-redo)) ;; Enable redo
 
+;; Magit
+(use-package magit
+  :ensure t)
 
 ;; Options
 (setq inhibit-splash-screen t ;; Disable splash screen
