@@ -4,6 +4,8 @@ let
 in
 {
   environment.systemPackages = [
+    # Bash
+    pkgs.shellcheck
     # C \ C++
     pkgs.gcc
     # C# / .NET
@@ -22,7 +24,7 @@ in
     pkgs.rustup
 
     # Other packages
-    pkgs.clang-tools pkgs.clang unstable.prettierd
+    pkgs.pandoc pkgs.clang-tools pkgs.clang unstable.prettierd
   ];
 
   # Docker
