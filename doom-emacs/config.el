@@ -74,3 +74,8 @@
 ;;
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
+
+;; Custom org keywords
+(after! org
+  (setq org-todo-keywords
+      '((sequence "TODO(t)" "DOING(p)" "LOOP(r)" "WAIT(w)" "HOLD(h)" "IDEA(i)" "INFO(I)" "|" "DONE(d)" "NVM(n)"))))
