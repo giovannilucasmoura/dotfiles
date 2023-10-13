@@ -79,3 +79,17 @@
 (after! org
   (setq org-todo-keywords
       '((sequence "TODO(t)" "DOING(p)" "LOOP(r)" "WAIT(w)" "HOLD(h)" "IDEA(i)" "INFO(I)" "|" "DONE(d)" "NVM(n)"))))
+
+;; Java VM args(mainly enabling lombok)
+(setq lsp-java-vmargs `(
+                        "-Declipse.application=org.eclipse.jdt.ls.core.id1"
+                        "-Dosgi.bundles.defaultStartLevel=4"
+                        "-Dlog.protocol=true"
+                        "-Dlog.level=ALL"
+                        "-XX:+UseParallelGC"
+                        "-XX:GCTimeRatio=4"
+                        "-XX:AdaptiveSizePolicyWeight=90"
+                        "-Dsun.zip.disableMemoryMapping=true"
+                        "-Xmx1G"
+                        "-Xms100m"
+                        ,(concat "-javaagent:/home/giovanni/Workspace/other/lombok.jar")))
