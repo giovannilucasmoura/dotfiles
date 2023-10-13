@@ -5,26 +5,29 @@ in
 {
   environment.systemPackages = [
     # Bash
-    pkgs.shellcheck
+    pkgs.shellcheck pkgs.shfmt
     # C \ C++
     pkgs.gcc
-    # C# / .NET
-    pkgs.dotnet-sdk
+    # HTML / CSS
+    pkgs.html-tidy pkgs.nodePackages_latest.stylelint pkgs.nodePackages_latest.js-beautify
     # Java
     pkgs.jdk
     # Javascript
     pkgs.nodejs_20
     # LaTeX
     pkgs.texlive.combined.scheme-full pkgs.pplatex
+    # Lisp
+    pkgs.sbcl
     # Nix
-    unstable.nixd
+    unstable.nil pkgs.nixfmt
     # OCaml
     pkgs.opam
     # Rust
     pkgs.rustup
 
     # Other packages
-    pkgs.pandoc pkgs.clang-tools pkgs.clang unstable.prettierd
+    pkgs.gnumake pkgs.pandoc pkgs.clang-tools pkgs.clang unstable.prettierd
+    pkgs.libxml2 pkgs.glslang
   ];
 
   # Docker
