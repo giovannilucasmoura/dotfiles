@@ -33,5 +33,6 @@ in
   # Docker
   virtualisation.docker.enable = true;
   users.users.giovanni.extraGroups = [ "docker" ];
+  programs.direnv.enable = true;
 
 }
