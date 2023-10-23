@@ -93,3 +93,8 @@
                         "-Xmx1G"
                         "-Xms100m"
                         ,(concat "-javaagent:/home/giovanni/Workspace/other/lombok.jar")))
+
+;; Formatter configuration
+(after! format
+  (set-formatter! 'clang-format '("clang-format" "-style={IndentWidth: 4, UseTab: Never}" "-assume-filename=.c")
+    :modes '((c-mode ".c") (c++-mode ".cpp") (java-mode ".java"))))
