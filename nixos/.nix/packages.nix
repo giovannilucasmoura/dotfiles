@@ -1,5 +1,6 @@
-{ pkgs, ... }:
+{ pkgs, config, ... }:
 let
+  xone-ovr = config.boot.kernelPackages.callPackage ./xone.nix {};
   unstable = import <nixos-unstable> {};
   unstablePkgs = with unstable; [ neovim zellij ];
 in
@@ -26,5 +27,9 @@ in
   services.emacs = {
     enable = true;
     package = pkgs.emacs-unstable;
+  };
+
+  boot = {
+    extraModulePackages = [ xone-ovr ];
   };
 }
