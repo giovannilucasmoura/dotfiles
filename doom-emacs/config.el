@@ -98,3 +98,7 @@
 (after! format
   (set-formatter! 'clang-format '("clang-format" "-style={IndentWidth: 4, UseTab: Never}" "-assume-filename=.c")
     :modes '((c-mode ".c") (c++-mode ".cpp") (java-mode ".java"))))
+
+;; Auto start pinentry server on magit mode
+(after! magit
+  (add-hook! 'magit-mode-hook 'pinentry-start))
