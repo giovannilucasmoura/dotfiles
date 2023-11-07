@@ -20,8 +20,18 @@
   services.mysql.package = pkgs.mariadb;
 
   environment.systemPackages = with pkgs; [
-    brightnessctl cbatticon dbeaver eclipses.eclipse-jee networkmanagerapplet
+    brightnessctl cbatticon dbeaver eclipses.eclipse-jee gnupg networkmanagerapplet pinentry subversion
   ];
 
+  services.pcscd.enable = true;
+  programs.gnupg.agent = {
+    enable = true;
+    enableSSHSupport = true;
+    pinentryFlavor = "tty";
+  };
+
   services.blueman.enable = true;
+
+  networking.firewall.allowedTCPPortRanges = [ { from = 8080; to = 9000; } ];
+  networking.firewall.allowedUDPPortRanges = [ { from = 8080; to = 9000; } ];
 }
