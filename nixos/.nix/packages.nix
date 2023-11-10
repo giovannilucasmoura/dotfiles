@@ -10,9 +10,9 @@ in
   ];
 
   environment.systemPackages = with pkgs; [
-    alacritty appimage-run chromium cmus cmusfm discord dunst emacs-unstable feh firefox-esr fd flameshot fzf gimp goverlay
-    i3lock-color krita lxappearance mangohud mpv neofetch pamixer patchelf pavucontrol picom polybar qbittorrent ranger
-    redshift ripgrep rofi syncthing unzip xclip xf86_input_wacom xss-lock zathura zoxide xorg.libXi
+    alacritty appimage-run chromium cmus discord dunst emacs-unstable feh firefox-esr fd flameshot fzf gimp goverlay
+    i3lock-color lxappearance mangohud mpv neofetch pamixer patchelf pavucontrol picom polybar qbittorrent ranger
+    redshift ripgrep rofi syncthing unzip xclip xss-lock zathura zoxide xorg.libXi
   ] ++ unstablePkgs;
 
   programs = {
@@ -28,6 +28,10 @@ in
     enable = true;
     package = pkgs.emacs-unstable;
   };
+
+  # Syncthing ports
+  networking.firewall.allowedTCPPorts = [ 8384 22000 ];
+  networking.firewall.allowedUDPPorts = [ 22000 21027 ];
 
   boot = {
     extraModulePackages = [ xone-ovr ];

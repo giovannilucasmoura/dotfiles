@@ -15,7 +15,7 @@
   };
 
   environment.systemPackages = with pkgs; [
-    autorandr
+    autorandr krita xf86_input_wacom
   ];
 
   hardware.opengl = {
