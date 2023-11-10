@@ -6,13 +6,16 @@ let
 in
 {
   nixpkgs.overlays = [
-    (import (builtins.fetchTarball "https://github.com/nix-community/emacs-overlay/archive/master.tar.gz"))
+    (import (builtins.fetchTarball
+      "https://github.com/nix-community/emacs-overlay/archive/master.tar.gz"))
   ];
 
   environment.systemPackages = with pkgs; [
-    alacritty appimage-run chromium cmus discord dunst emacs-unstable feh firefox-esr fd flameshot fzf gimp goverlay
-    i3lock-color lxappearance mangohud mpv neofetch pamixer patchelf pavucontrol picom polybar qbittorrent ranger
-    redshift ripgrep rofi syncthing unzip xclip xss-lock zathura zoxide xorg.libXi
+    alacritty appimage-run chromium cmus discord dunst emacs-unstable feh
+    firefox-esr fd flameshot fzf gimp goverlay i3lock-color lxappearance
+    mangohud mpv neofetch pamixer patchelf pavucontrol picard picom polybar
+    qbittorrent ranger redshift ripgrep rofi syncthing unzip xclip xss-lock
+    zathura zoxide xorg.libXi
   ] ++ unstablePkgs;
 
   programs = {

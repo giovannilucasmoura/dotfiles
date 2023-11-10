@@ -20,7 +20,8 @@
   services.mysql.package = pkgs.mariadb;
 
   environment.systemPackages = with pkgs; [
-    brightnessctl cbatticon dbeaver eclipses.eclipse-jee gnupg networkmanagerapplet pinentry subversion
+    brightnessctl cbatticon dbeaver eclipses.eclipse-jee gnupg
+    networkmanagerapplet pinentry subversion
   ];
 
   services.pcscd.enable = true;
