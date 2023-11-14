@@ -12,14 +12,15 @@ in
 
   environment.systemPackages = with pkgs; [
     alacritty appimage-run chromium cmus discord dunst emacs-unstable feh
-    firefox-esr fd flameshot fzf gimp goverlay i3lock-color lxappearance
-    mangohud mpv neofetch pamixer patchelf pavucontrol picard picom polybar
-    qbittorrent ranger redshift ripgrep rofi syncthing unzip xclip xss-lock
-    zathura zoxide xorg.libXi
+    firefox-esr fd flameshot fzf gimp goverlay i3lock-color libreoffice-qt
+    lxappearance mangohud mpv neofetch pamixer patchelf pavucontrol picard picom
+    polybar qbittorrent ranger redshift ripgrep rofi syncthing unzip xclip
+    xss-lock zathura zoxide xorg.libXi
   ] ++ unstablePkgs;
 
   programs = {
     i3lock.package = pkgs.i3lock-color;
+    kdeconnect.enable = true;
     steam = {
       enable = true;
       remotePlay.openFirewall = true;
