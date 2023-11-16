@@ -12,10 +12,10 @@ in
 
   environment.systemPackages = with pkgs; [
     alacritty appimage-run chromium cmus discord dunst emacs-unstable feh
-    firefox-esr fd flameshot fzf gimp goverlay i3lock-color libreoffice-qt
+    firefox-esr fd flameshot fzf gnupg gimp goverlay i3lock-color libreoffice
     lxappearance mangohud mpv neofetch pamixer patchelf pavucontrol picard picom
-    polybar qbittorrent ranger redshift ripgrep rofi syncthing unzip xclip
-    xss-lock zathura zoxide xorg.libXi
+    polybar pinentry qbittorrent ranger redshift ripgrep rofi syncthing unzip
+    xclip xss-lock zathura zoxide xorg.libXi
   ] ++ unstablePkgs;
 
   programs = {
@@ -26,11 +26,19 @@ in
       remotePlay.openFirewall = true;
       dedicatedServer.openFirewall = true;
     };
+    gnupg.agent = {
+      enable = true;
+      enableSSHSupport = true;
+      pinentryFlavor = "tty";
+    };
   };
 
-  services.emacs = {
-    enable = true;
-    package = pkgs.emacs-unstable;
+  services = {
+    emacs = {
+      enable = true;
+      package = pkgs.emacs-unstable;
+    };
+    pcscd.enable = true;
   };
 
   # Syncthing ports

@@ -20,16 +20,9 @@
   services.mysql.package = pkgs.mariadb;
 
   environment.systemPackages = with pkgs; [
-    brightnessctl cbatticon dbeaver eclipses.eclipse-jee gnupg
-    networkmanagerapplet pinentry subversion
+    brightnessctl cbatticon dbeaver eclipses.eclipse-jee networkmanagerapplet
+    subversion
   ];
-
-  services.pcscd.enable = true;
-  programs.gnupg.agent = {
-    enable = true;
-    enableSSHSupport = true;
-    pinentryFlavor = "tty";
-  };
 
   services.blueman.enable = true;
 
