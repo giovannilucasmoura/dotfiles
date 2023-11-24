@@ -66,7 +66,7 @@
   users.users.giovanni = {
     isNormalUser = true;
     description = "giovanni";
-    extraGroups = [ "networkmanager" "wheel" "audio" ];
+    extraGroups = [ "networkmanager" "wheel" "audio" "wireshark" ];
     packages = with pkgs; [];
   };
 

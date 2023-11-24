@@ -39,6 +39,10 @@ in
       enableSSHSupport = true;
       pinentryFlavor = "tty";
     };
+    wireshark = {
+      enable = true;
+      package = pkgs.wireshark;
+    };
   };
 
   services = {
