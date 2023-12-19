@@ -19,16 +19,17 @@ in
   ];
 
   environment.systemPackages = with pkgs; [
-    alacritty appimage-run chromium cmus discord dunst emacs-unstable feh
-    firefox-esr fd flameshot fzf gnupg gimp goverlay i3lock-color libreoffice
+    alacritty appimage-run chromium cmus discord dunst easyeffects emacs-unstable
+    feh firefox-esr fd flameshot fzf gnupg gimp goverlay i3lock-color libreoffice
     lxappearance mangohud mpv neofetch pamixer patchelf pavucontrol picard picom
-    playerctl polybar pinentry qbittorrent ranger redshift ripgrep rofi
-    syncthing unzip xclip xss-lock zathura zip zoxide xorg.libXi
+    playerctl polybar pinentry qbittorrent ranger redshift ripgrep rofi syncthing
+    unzip xclip xss-lock zathura zip zoxide xorg.libXi
   ] ++ unstablePkgs ++ nurPkgs;
 
   programs = {
     i3lock.package = pkgs.i3lock-color;
     kdeconnect.enable = true;
+    dconf.enable = true;
     steam = {
       enable = true;
       remotePlay.openFirewall = true;
