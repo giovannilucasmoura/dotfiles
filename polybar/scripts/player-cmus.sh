@@ -13,11 +13,9 @@ if info=$(cmus-remote -Q 2> /dev/null); then
 
 			if [ "$status" = "playing" ]; then
 				info_string="▶ $info_string"
-			else
-				info_string="$info_string"
 			fi
 			
-			if [ ${#info_string} > 50 ]; then
+			if [ ${#info_string} -gt 50 ]; then
 				info_string="${info_string:0:50}..."
 			fi
 
