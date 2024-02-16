@@ -13,10 +13,11 @@ in {
 
   environment.systemPackages = with pkgs; [
     alacritty appimage-run chromium cmus discord dunst easyeffects feh
-    firefox-esr fd flameshot fzf gnupg gimp goverlay i3lock-color jdk libreoffice
-    lxappearance mangohud mpv neofetch neovim nodejs_20 pamixer patchelf pavucontrol picard
-    picom playerctl polybar pinentry qbittorrent ranger redshift ripgrep rofi
-    syncthing unzip xclip xss-lock zathura zellij zip zoxide xorg.libXi
+    firefox-esr fd flameshot fzf gnupg gimp goverlay htop i3lock-color jdk
+    libreoffice lxappearance mangohud mpv neofetch neovim nix-index nodejs_20
+    pamixer patchelf pavucontrol picard picom playerctl polybar pinentry
+    qbittorrent ranger redshift ripgrep rofi syncthing unzip xclip xss-lock
+    zathura zellij zip zoxide xorg.libXi
   ] ++ nurPkgs;
 
   programs = {
