@@ -1,3 +1,3 @@
 {
-  imports = [ ./packages.nix ./dev-packages.nix ./blackbox.nix ];
+  imports = [ ./packages.nix ./blackbox.nix ];
 }

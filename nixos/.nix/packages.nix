@@ -30,6 +30,7 @@ in
     i3lock.package = pkgs.i3lock-color;
     kdeconnect.enable = true;
     dconf.enable = true;
+    direnv.enable = true;
     steam = {
       enable = true;
       remotePlay.openFirewall = true;
@@ -61,4 +62,8 @@ in
   boot = {
     extraModulePackages = [ xone-ovr ];
   };
+
+  # Docker
+  virtualisation.docker.enable = true;
+  users.users.giovanni.extraGroups = [ "docker" ];
 }
