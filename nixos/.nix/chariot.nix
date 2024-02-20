@@ -14,7 +14,7 @@
   '';
 
   hardware.bluetooth.enable = true;
-  hardware.bluetooth.powerOnBoot = true;
+  # hardware.bluetooth.powerOnBoot = true;
 
   services.mysql.enable = true;
   services.mysql.package = pkgs.mariadb;

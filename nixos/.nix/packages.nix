@@ -56,8 +56,4 @@ in {
   boot = {
     extraModulePackages = [ xone-ovr ];
   };
-
-  # Docker
-  virtualisation.docker.enable = true;
-  users.users.giovanni.extraGroups = [ "docker" ];
 }

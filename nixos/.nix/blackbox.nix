@@ -51,4 +51,8 @@
     device = "/dev/disk/by-uuid/e0b5d29f-80ea-4f6d-8503-9cce80be5115";
     fsType = "ext4";
   };
+
+  # Docker
+  virtualisation.docker.enable = true;
+  users.users.giovanni.extraGroups = [ "docker" ];
 }
