@@ -16,8 +16,8 @@ in {
     feh firefox-esr fd flameshot fzf gcc gdb gnumake gnupg gimp goverlay htop
     i3lock-color jdk libreoffice lxappearance mangohud mpv neofetch neovim
     nix-index nodejs_20 pamixer patchelf pavucontrol picard picom playerctl
-    polybar pinentry qbittorrent ranger redshift ripgrep rofi syncthing unzip
-    valgrind xclip xss-lock zathura zellij zip zoxide xorg.libXi
+    polybar pinentry qbittorrent ranger reaper redshift ripgrep rofi syncthing
+    unzip valgrind xclip xcolor xss-lock zathura zellij zip zoxide xorg.libXi
   ] ++ nurPkgs;
 
   programs = {
