@@ -15,7 +15,7 @@
   };
 
   environment.systemPackages = with pkgs; [
-    autorandr krita xf86_input_wacom
+    autorandr
   ];
 
   hardware.opengl = {
@@ -44,7 +44,7 @@
 
     forceFullCompositionPipeline = true;
 
-    package = config.boot.kernelPackages.nvidiaPackages.vulkan_beta;
+      package = config.boot.kernelPackages.nvidiaPackages.latest;
   };
 
   fileSystems."/home/giovanni/Data" = {
@@ -52,7 +52,12 @@
     fsType = "ext4";
   };
 
+  services.pipewire = {
+    jack.enable = true;
+  };
+
   # Docker
   virtualisation.docker.enable = true;
-  users.users.giovanni.extraGroups = [ "docker" ];
+
+  users.users.giovanni.extraGroups = [ "docker" "jackaudio" ];
 }
