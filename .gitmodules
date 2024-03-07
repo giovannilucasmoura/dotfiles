@@ -1,3 +1,3 @@
-[submodule "nixos/.nix/musnix"]
+[submodule "musnix"]
 	path = nixos/.nix/musnix
 	url = https://github.com/musnix/musnix.git
