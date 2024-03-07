@@ -2,7 +2,7 @@
 
 let
   xone-ovr = config.boot.kernelPackages.callPackage ./xone.nix {};
-  nurPkgs = with pkgs.nur.repos.nltch; [ spotify-adblock ciscoPacketTracer8 ];
+  nurPkgs = with pkgs.nur.repos.nltch; [ spotify-adblock ];
 in {
   nixpkgs.config.packageOverrides = pkgs: {
     nur = import (builtins.fetchTarball
@@ -16,8 +16,8 @@ in {
     feh firefox-esr fd flameshot fzf gcc gdb gnumake gnupg gimp goverlay htop
     i3lock-color jdk libreoffice lxappearance mangohud mpv neofetch neovim
     nix-index nodejs_20 pamixer patchelf pavucontrol picard picom playerctl
-    polybar pinentry qbittorrent ranger reaper redshift ripgrep rofi syncthing
-    unzip valgrind xclip xcolor xss-lock zathura zellij zip zoxide xorg.libXi
+    polybar pinentry qbittorrent ranger redshift ripgrep rofi syncthing unzip
+    valgrind xclip xcolor xss-lock zathura zellij zip zoxide xorg.libXi
   ] ++ nurPkgs;
 
   programs = {

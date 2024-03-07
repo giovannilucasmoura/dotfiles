@@ -15,7 +15,7 @@
   };
 
   environment.systemPackages = with pkgs; [
-    autorandr
+    autorandr guitarix lingot qjackctl reaper wine-staging yabridge yabridgectl
   ];
 
   hardware.opengl = {
