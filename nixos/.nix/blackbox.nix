@@ -1,5 +1,8 @@
 { config, pkgs, ... }:
 {
+  imports = [ ./musnix ];
+
+  musnix.enable = true;
   boot.loader.grub = {
     extraEntries = ''
       menuentry "Windows" {
@@ -59,5 +62,6 @@
   # Docker
   virtualisation.docker.enable = true;
 
-  users.users.giovanni.extraGroups = [ "docker" "jackaudio" ];
+  users.users.giovanni.extraGroups = [ "audio" "docker" "jackaudio" ];
+
 }
