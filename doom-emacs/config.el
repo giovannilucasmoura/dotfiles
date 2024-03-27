@@ -97,8 +97,11 @@
 ;; Formatter configuration
 (after! format
   (set-formatter! 'clang-format '("clang-format" "-style={IndentWidth: 4, UseTab: Never}" "-assume-filename=.c")
-    :modes '((c-mode ".c") (c++-mode ".cpp") (java-mode ".java"))))
+    :modes '((c-mode ".c") (c++-mode ".cpp") (java-mode ".java")))
+  (set-formatter! 'prettier-typescript '("apheleia-npx" "prettier" "--stdin-filepath" filepath "--parser=typescript")
+    :modes '(typescript-mode typescript-ts-mode js-ts-mode tsx-ts-mode)))
 
-;; Auto start pinentry server on magit mode
 (after! magit
-  (add-hook! 'magit-mode-hook 'pinentry-start))
+  ;; Auto start pinentry server on magit mode
+  (add-hook! 'magit-mode-hook 'pinentry-start)
+  (setq git-commit-summary-max-length 66))
