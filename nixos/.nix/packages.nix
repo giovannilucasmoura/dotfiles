@@ -3,16 +3,16 @@
 let
   xone-ovr = config.boot.kernelPackages.callPackage ./xone.nix {};
   unstable = import <nixos-unstable> { config = { allowUnfree = true; }; };
-  unstablePkgs = with unstable; [ dwarf-fortress ];
+  unstablePkgs = with unstable; [ dwarf-fortress gnupg ];
 in {
   environment.systemPackages = with pkgs; [
     alacritty appimage-run calibre chromium clang-tools cmus discord dunst
-    easyeffects evince feh firefox-esr fd flameshot fzf gcc gdb gnumake gnupg
-    gimp goverlay htop i3lock-color jdk libreoffice lxappearance mangohud mpv
-    neofetch neovim nil nodejs_20 pamixer patchelf pavucontrol picard picom
-    playerctl polybar pinentry qbittorrent ranger reaper redshift ripgrep rofi
-    syncthing unzip valgrind xclip xcolor xss-lock yacreader zathura zellij zip
-    zoxide xorg.libXi
+    easyeffects evince feh firefox-esr fd flameshot fzf gcc gdb gnumake gimp
+    goverlay htop i3lock-color jdk jdk21 jetbrains.idea-community libreoffice
+    lxappearance mangohud mpv neofetch neovim nil nodejs_20 pamixer patchelf
+    pavucontrol picard picom playerctl polybar pinentry qbittorrent ranger reaper
+    redshift ripgrep rofi syncthing unzip valgrind xclip xcolor xss-lock
+    yacreader zathura zellij zip zoxide xorg.libXi
   ] ++ unstablePkgs;
 
   programs = {
@@ -25,10 +25,13 @@ in {
       remotePlay.openFirewall = true;
       dedicatedServer.openFirewall = true;
     };
-    gnupg.agent = {
-      enable = true;
-      enableSSHSupport = true;
-      pinentryFlavor = "tty";
+    gnupg = {
+      package = unstable.gnupg;
+      agent = {
+        enable = true;
+        enableSSHSupport = true;
+        pinentryFlavor = "tty";
+      };
     };
     wireshark = {
       enable = true;
