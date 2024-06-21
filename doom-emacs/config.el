@@ -105,3 +105,13 @@
   ;; Auto start pinentry server on magit mode
   (add-hook! 'magit-mode-hook 'pinentry-start)
   (setq git-commit-summary-max-length 66))
+
+;; STS4 integration for lsp-java
+(use-package! lsp-java-boot
+  :after lsp-mode
+  :preface
+  (add-hook 'conf-javaprop-mode-local-vars-hook #'lsp!)
+  (add-hook 'yaml-mode-local-vars-hook #'lsp!)
+  :config
+  (add-hook 'java-mode-local-vars-hook #'lsp-java-boot-lens-mode 'append)
+  (add-hook 'yaml-mode-local-vars-hook #'lsp-java-boot-lens-mode 'append))
