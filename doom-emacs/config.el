@@ -42,7 +42,6 @@
 ;; change `org-directory'. It must be set before org loads!
 (setq org-directory "~/org/")
 
-
 ;; Whenever you reconfigure a package, make sure to wrap your config in an
 ;; `after!' block, otherwise Doom's defaults may override your settings. E.g.
 ;;
@@ -75,10 +74,12 @@
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
 
-;; Custom org keywords
 (after! org
+  ;; Custom org keywords
   (setq org-todo-keywords
-      '((sequence "TODO(t)" "DOING(p)" "LOOP(r)" "WAIT(w)" "HOLD(h)" "IDEA(i)" "INFO(I)" "|" "DONE(d)" "NVM(n)"))))
+      '((sequence "TODO(t)" "DOING(p)" "LOOP(r)" "WAIT(w)" "HOLD(h)" "IDEA(i)" "INFO(I)" "|" "DONE(d)" "NVM(n)")))
+  ;; verb.el config
+  (define-key org-mode-map (kbd "C-c C-r") verb-command-map))
 
 ;; Java VM args(mainly enabling lombok)
 (setq lsp-java-vmargs `(

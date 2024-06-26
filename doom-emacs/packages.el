@@ -50,3 +50,4 @@
 ;(unpin! t)
 (package! pinentry)
 (package! envrc)
+(package! verb)
