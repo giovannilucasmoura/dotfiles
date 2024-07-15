@@ -42,11 +42,11 @@
   services = {
     xserver = {
       enable = true;
-
+      xkb = {
+        layout = "br";
+        variant = "";
+      };
       windowManager.i3.enable = true;
-
-      layout = "br";
-      xkbVariant = "";
     };
 
     pipewire = {

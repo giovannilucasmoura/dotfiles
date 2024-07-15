@@ -14,13 +14,12 @@
   '';
 
   hardware.bluetooth.enable = true;
-  # hardware.bluetooth.powerOnBoot = true;
 
   services.mysql.enable = true;
   services.mysql.package = pkgs.mariadb;
 
   environment.systemPackages = with pkgs; [
-    brightnessctl cbatticon dbeaver eclipses.eclipse-jee networkmanagerapplet
+    brightnessctl cbatticon dbeaver-bin eclipses.eclipse-jee networkmanagerapplet
     subversion
   ];
 
