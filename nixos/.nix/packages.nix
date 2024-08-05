@@ -4,14 +4,12 @@ let
   xone-ovr = config.boot.kernelPackages.callPackage ./xone.nix {};
 in {
   environment.systemPackages = with pkgs; [
-    alacritty appimage-run calibre chromium clang-tools cmus discord dunst
-    dwarf-fortress easyeffects evince feh firefox-esr fd flameshot fzf gcc gdb
-    gnumake gimp goverlay htop i3lock-color jdk jdk21 jetbrains.jdk
-    jetbrains-toolbox libreoffice lxappearance mangohud mpv neofetch neovim
-    nethack nil nodejs_20 pamixer patchelf pavucontrol picard picom playerctl
-    polybar pinentry qbittorrent ranger reaper redshift ripgrep rofi syncthing
-    unzip valgrind xclip xcolor xss-lock yacreader zathura zellij zip zoxide
-    xorg.libXi
+    alacritty appimage-run calibre chromium cmus discord dunst dwarf-fortress
+    easyeffects evince feh firefox-esr fd flameshot fzf gimp goverlay htop
+    i3lock-color jdk jdk21 jetbrains-toolbox libreoffice lxappearance mangohud
+    mpv musescore neofetch neovim nil nodejs_20 pamixer pavucontrol picard picom
+    playerctl polybar pinentry qbittorrent ranger reaper redshift ripgrep rofi
+    syncthing unzip xclip xcolor xss-lock zathura zellij zip zoxide xorg.libXi
   ];
 
   programs = {

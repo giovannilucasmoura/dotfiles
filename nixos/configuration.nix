@@ -73,7 +73,7 @@
   nixpkgs.config.allowUnfree = true;
 
   environment = {
-    systemPackages = with pkgs; [ wget vim git ntfs3g xdg-user-dirs ];
+    systemPackages = with pkgs; [ git ntfs3g patchelf vim wget xdg-user-dirs ];
     etc = {
       "xdg/user-dirs.defaults".text = ''
         DOWNLOAD=Downloads/
